@@ -22,14 +22,17 @@ One function for checking all y and x from given number must be made.
 '''
 
 # creating boards
-with open("bingo.txt", "r") as a_file:
+with open("Files/day4.txt", "r") as a_file:
     temp = []
     for line in a_file:
-      if line == '\n':
-          boards.append(temp)
-          temp = []
-      else:
-          temp.append(list(line.strip().split()))
+            if len(line.split(',')) > 20:
+                pass
+            else:
+                if line == '\n':
+                    boards.append(temp)
+                    temp = []
+                else:
+                    temp.append(list(line.strip().split()))
 board_x = len(boards[0])
 board_y = len(boards[0][0])
 

@@ -21,7 +21,7 @@ One function for checking all y and x from given number must be made.
 '''
 
 # creating boards
-with open("bingo.txt", "r") as a_file:
+with open("Files/day4.txt", "r") as a_file:
     temp = []
     for line in a_file:
       if line == '\n':
@@ -43,14 +43,14 @@ for i in range(len(boards)):
 def calculateScore(boardNr, curBoard, fetchedNumber):
     '''finding the sum of all unmarked numbers on that board
     Multiply it by the fetched number'''
-    print("fetchedNumber:", fetchedNumber)
-    print("found numbers for board is ",found_numbers[boardNr] )
+    #print("fetchedNumber:", fetchedNumber)
+    #print("found numbers for board is ",found_numbers[boardNr] )
     
     sum = 0
     for line in curBoard:
         for number in line:
             if number not in found_numbers[boardNr]:
-                print("number not found is ", number)
+                #print("number not found is ", number)
                 sum = sum + int(number)
     
     return sum * int(fetchedNumber)
@@ -67,7 +67,7 @@ def checkBingo(boardNr, xp,  yp):
     for xb in range(board_x):
         #print("checks curBoard x, xb val: ", x, xb)
         if curBoard[x][xb] in found_numbers[boardNr]:
-            print("checks number:", curBoard[x][xb])
+            #print("checks number:", curBoard[x][xb])
             bingoLine.append(curBoard[x][xb])
         else: # x values not bingo, check y values
             bingoLine = []
@@ -78,16 +78,18 @@ def checkBingo(boardNr, xp,  yp):
                     bingoLine = []
                     return False
     print("\n\nBINGO!\n Found: ", bingoLine , "\n On board: " )
-    for line in boards[boardNr]:
-        print(line)
-    print("\n Score is: ", calculateScore(boardNr, curBoard, fetchedNumber))
+    #for line in boards[boardNr]:
+        #print(line)
+    score = calculateScore(boardNr, curBoard, fetchedNumber)
+    if score != 0: print("\n Score is: ", score)
+    else: exit(0)
     return True # returns true if False is not returned earlier
 
 # Fetching numbers
 winner = False
 while len(bingos) > 0:
     bingo_number = bingos.pop(0)
-    print("fetched number ", bingo_number)
+    #print("fetched number ", bingo_number)
     board_count = 0
     for board in boards:
         #print("checks board ", board)
@@ -98,7 +100,7 @@ while len(bingos) > 0:
             for number in lines:
                 y = y + 1
                 if int(number) == int(bingo_number):
-                    print("Found match: ", number, " == ", bingo_number ,"on coordinates [", y, ",", x, "]", "on board ", board_count) # x, y coor has switched somehow.
+                    #print("Found match: ", number, " == ", bingo_number ,"on coordinates [", y, ",", x, "]", "on board ", board_count) # x, y coor has switched somehow.
                     found_numbers[board_count].append(number) # bingo number found
                     # check all coordinates up and dowwn from here before going further to check for winners?
                     winner = checkBingo(board_count, x, y) # x, y coor of the found number will help us

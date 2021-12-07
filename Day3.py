@@ -3,7 +3,7 @@ bins = []
 original1 = []
 original = []
 # each index of array bins contains all the numbers on a given index. 
-with open("bin.txt", "r") as a_file:
+with open("Files/day3.txt", "r") as a_file:
   for line in a_file:
     binary = list(line.strip())
     original.append(binary)

@@ -7,7 +7,7 @@ global aim
 depth = 0
 horizontal = 0
 aim = 0
-
+''' Calculations of submarine movements '''
 def forward(val):
     global horizontal
     global aim
@@ -32,13 +32,13 @@ def move(func, val):
     elif func == 'up':
         up(val)
 
-with open("directions.txt", "r") as a_file:
+with open("Files/day2.txt", "r") as a_file:
     for line in a_file:
         func, val = line.split(" ")
         move(func, int(val))
-        print(func, " with value ", val)
+        #print(func, " with value ", val)
 print("depth: ", depth, ", position: ", horizontal)
-print(depth*horizontal)
+print("Depth * horizontal position: ", depth*horizontal)
 
 
 

@@ -3,7 +3,7 @@ from typing import Dict, List, Sequence, Tuple
 import numpy as np
 
 
-INPUT_FILE = "bingo.txt"
+INPUT_FILE = "Files/day4.txt"
 GRID_LEN = 5
 
 

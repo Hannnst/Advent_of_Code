@@ -1,7 +1,9 @@
 measurements = []
 increased = 0
 groups = []
-with open("measurements.txt", "r") as a_file:
+
+''' Script that calculates how many numbers appear increased for each iteration from a list '''
+with open("Files/day1.txt", "r") as a_file:
   for line in a_file:
     stripped_line = line.strip()
     measurements.append(stripped_line)

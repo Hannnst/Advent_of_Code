@@ -2,7 +2,7 @@ binary_numbers = []
 binary_numbers_per_index = []
 dominant_per_index = []
 
-with open("bin.txt", "r") as a_file:
+with open("Files/day3.txt", "r") as a_file:
   for line in a_file:
       binary_numbers.append(list(line.strip()))
       for b in range(len(line.strip().split())):
