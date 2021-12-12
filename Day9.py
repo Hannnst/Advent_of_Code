@@ -3,7 +3,7 @@
 points = []
 low_points = []
 # save all digits in 2d array
-with open("Files/day9_test.txt", "r") as f:
+with open("Files/day9.txt", "r") as f:
   for line in f:
     temp = []
     for digit in line.strip():
@@ -87,9 +87,26 @@ print("low points: ", low_points)
 for p in low_points:
   allBasin.append(helloThereNeighbour(p))
 
-
-print("basin vals")
+uniqueBasins = []
+lengths = []
+# must remove duplicate points from all basin
 for b in allBasin:
-  print("ny basin")
-  print(b)
-  print("length of basin: ",len(b))
+  uniqueBasin = []
+  for p in b:
+    if p not in uniqueBasin:
+      uniqueBasin.append(p)
+  # want the largest basins to be in front in the array uniquebasins
+  index = 0
+  for ub in uniqueBasins:
+    if len(uniqueBasin) > ub['len']:
+      print
+  lengths.append(len(uniqueBasin))
+  uniqueBasins.append({'basin':uniqueBasin, 'len':len(uniqueBasin)})
+
+# sorting and popping the three last numbers in all lengths
+sortedLens = sorted(lengths)
+a, b, c = sortedLens.pop(), sortedLens.pop(), sortedLens.pop()
+print("the three basins are ", a,b,c)
+print("The three lengths of the largest basins is ", a*b*c)
+
+
