@@ -1,5 +1,3 @@
-""" only 12 red cubes, 13 green cubes, and 14 blue cubes? """
-from collections import defaultdict
 from utils import readFile
 
 inventory = {
@@ -7,17 +5,41 @@ inventory = {
     "green": 13,
     "blue": 14
 }
-def cubeGame(inventory):
-    """ What it does """
-    totalCubes = sum(inventory.values())
 
-    sentence = "Game 75: 13 blue, 20 red, 10 green; 3 green, 5 blue, 14 red; 9 red, 13 green, 7 blue; 1 blue, 15 red, 2 green; 11 blue, 2 green, 17 red; 11 red, 13 blue, 13 green"
-    for line in readFile("Files/day2_test.txt"):
-        # Extract color and count information from the sentence
-        for info in sentence.split(';'):
-            for cubeGrab in info.split(','):
-                color, count = cubeGrab.strip().split()
-                inventory[color] += int(count)
+def cubeGame(inventory: dict):
+    legitimateGames = 0
+    schizoGames = 0
+    for line in readFile("Files/day2.txt"):
+        gameID = line.split(":")[0].split().pop()
+        schizoGames += schizoGame(line)
+        if bogusDetector(line, inventory):
+            print(f"Game {gameID} is possible")
+            legitimateGames += (int(gameID))
+    return legitimateGames, schizoGames
 
-cubeGame(inventory)
-print(totalCubes)
+def bogusDetector(line: str, inventory: dict) -> bool:
+    cubeGrab = line.split(":")[1].split(";")
+    for cube in cubeGrab:
+        for combination in cube.split(','):
+            num, color = combination.split()
+            if int(num) > inventory[color]:
+                return False
+    return True
+
+def schizoGame(line: str):
+    game = {}
+    cubeGrab = line.split(":")[1].split(";")
+    power = 1
+    for cube in cubeGrab:
+        for combination in cube.split(','):
+            num, color = combination.split()
+            if color in game:
+                if int(num) > game[color]:
+                    game[color] = int(num)
+            else:
+                game[color] = int(num)
+    for numbers in game.values():
+        power *= numbers
+    return power
+
+print(cubeGame(inventory))
