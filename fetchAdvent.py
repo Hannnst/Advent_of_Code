@@ -68,7 +68,7 @@ def create_template(day: int) -> str:
     return template.format(day=day)
 
 def main(year=datetime.now().year):
-    year_folder = str(year) + "test"
+    year_folder = str(year)
 
     for day in range(1, 25):
         try:
