@@ -9,3 +9,7 @@ It also contains my personal solutions or lack thereof, for each day. Enjoy!
    ```sh
    git clone https://github.com/Hannnst/Advent_of_Code.git
    cd Advent_of_Code
+
+2. Run setup file:
+```sh
+   pip install .
