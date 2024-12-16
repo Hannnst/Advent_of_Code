@@ -1,0 +1,106 @@
+AAAA
+BBCD
+BBCC
+EEEC
+A
+B
+C
+D
+E
+A
+B
+C
+4
+E
+3
+D
+1
+A
+C
+10
+B
+E
+8
+D
+4
+-
+|
++-+-+-+-+
+|A A A A|
++-+-+-+-+     +-+
+              |D|
++-+-+   +-+   +-+
+|B B|   |C|
++   +   + +-+
+|B B|   |C C|
++-+-+   +-+ +
+          |C|
++-+-+-+   +-+
+|E E E|
++-+-+-+
+OOOOO
+OXOXO
+OOOOO
+OXOXO
+OOOOO
+O
+X
+X
+1
+4
+21
+O
+20
+X
+4
+36
+A
+4 * 10 = 40
+B
+4 * 8 = 32
+C
+4 * 10 = 40
+D
+1 * 4 = 4
+E
+3 * 8 = 24
+140
+O
+21 * 36 = 756
+X
+1 * 4 = 4
+772
+756 + 4 + 4 + 4 + 4
+RRRRIICCFF
+RRRRIICCCF
+VVRRRCCFFF
+VVRCCCJFFF
+VVVVCJJCFE
+VVIVCCJJEE
+VVIIICJJEE
+MIIIIIJJEE
+MIIISIJEEE
+MMMISSJEEE
+R
+12 * 18 = 216
+I
+4 * 8 = 32
+C
+14 * 28 = 392
+F
+10 * 18 = 180
+V
+13 * 20 = 260
+J
+11 * 20 = 220
+C
+1 * 4 = 4
+E
+13 * 18 = 234
+I
+14 * 22 = 308
+M
+5 * 12 = 60
+S
+3 * 8 = 24
+1930
