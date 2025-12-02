@@ -56,7 +56,7 @@ def save_task_and_test_data(day: int, task_description: str, test_data: str, yea
 
     docstring = f'"""{task_description}"""\n\n'
     save_to_file(filename_task, docstring + create_template(day))
-    save_to_file(filename_test_data, test_data)
+    save_to_file(filename_test_data, test_data.strip())
 
 def create_template(day: int) -> str:
     """

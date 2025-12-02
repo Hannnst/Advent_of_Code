@@ -1,0 +1,2 @@
+[console_scripts]
+fetch_advent = fetchAdvent:main

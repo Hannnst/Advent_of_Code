@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: advent_of_code
+Version: 1.0.0
+Summary: A module to fetch and save Advent of Code tasks and test data.
+Home-page: https://github.com/Hannnst/Advent_of_Code
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

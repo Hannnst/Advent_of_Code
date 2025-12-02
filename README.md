@@ -21,6 +21,5 @@ It also contains my personal solutions or lack thereof, for each day. Enjoy!
    python fetchAdvent.py [optional year]
    ```
 
-Enjoy!
 
 

@@ -1,0 +1,8 @@
+README.md
+setup.py
+advent_of_code.egg-info/PKG-INFO
+advent_of_code.egg-info/SOURCES.txt
+advent_of_code.egg-info/dependency_links.txt
+advent_of_code.egg-info/entry_points.txt
+advent_of_code.egg-info/requires.txt
+advent_of_code.egg-info/top_level.txt
